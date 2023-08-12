@@ -1,12 +1,9 @@
 version: "2"
-project:
-    id: ""
-cloud:
-    organization: ""
-    project: ""
-    hostname: ""
-sql: []
-overrides:
-    go: null
-plugins: []
-rules: []
+sql:
+  - engine: "postgresql"
+    queries: "db/query"
+    schema: "db/migration"
+    gen:
+      go:
+        package: "sqlc"
+        out: "db/sqlc"
